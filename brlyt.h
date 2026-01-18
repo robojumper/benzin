@@ -142,12 +142,18 @@ typedef struct
 
 typedef struct
 {
-	u32			string_offset;
-	u32			is_working_offset;
-	u16			unk5;
-	u8			unk6;
-	u8			unk7;
+	u32			name_offset;
+	u32			data_offset;
+	u16			num_entries;
+	u8			type;
+	u8			padding;
 } brlyt_usdmain_chunk;
+
+typedef enum {
+	BRLYT_USDTYPE_STRING = 0,
+	BRLYT_USDTYPE_INT = 1,
+	BRLYT_USDTYPE_FLOAT = 2,
+} brlyt_usd_type;
 
 typedef struct
 {
